@@ -1,0 +1,13 @@
+---
+ - hosts: all
+   gather_facts: true
+#   become: yes
+#   become_user: root
+#   become_methos: sudo
+
+   tasks:
+   - name: Uptime of system
+     command: uptime
+     register: uptime
+
+   - debug: var=uptime.stdout_line
